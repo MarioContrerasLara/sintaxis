@@ -1,0 +1,29 @@
+using System;
+
+namespace _5
+{
+    //5 – Solicitar un número al usuario y generar un Array con N números aleatorios. Por ejemplo, si el usuario introduce 4,
+    //el resultado por consola debería ser: 23, 34, 234, 11
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Introduce un número: ");
+            int n = int.Parse(Console.ReadLine());
+
+            Random rand = new Random();
+            int[] array = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                array[i] = rand.Next();
+            }
+
+            Console.WriteLine(n + " números aleatorios:");
+            foreach (int num in array)
+            {
+                Console.WriteLine(num);
+            }
+        }
+    }
+}
