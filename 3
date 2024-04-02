@@ -1,0 +1,41 @@
+using System;
+using System.Reflection;
+
+namespace _3
+{
+    //3 - Pedir el nombre de la semana al usuario y decirle si es fin de semana o no. En caso de error, indicarlo.
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Introduce un nombre de la semana");
+
+            string[] diario = { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes" };
+
+            string[] fin = { "Sábado", "Domingo" };
+
+            string day = Console.ReadLine();
+
+            int index = Array.IndexOf(diario, day);
+
+            int index2 = Array.IndexOf(fin, day);
+
+            if (index >= 0)
+            {
+                Console.WriteLine(day + " no es fin de semana.");
+            }
+            else
+            {
+                if (index2 >= 0)
+                {
+                    Console.WriteLine(day + " es fin de semana.");
+                }
+                else
+                {
+                    Console.WriteLine("Valor introducido incorrecto.");
+                }
+            }
+
+        }
+    }
+}
