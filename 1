@@ -1,0 +1,24 @@
+using System;
+
+namespace _1
+{
+    //1 - Solicite el nombre de una persona, su edad y el nombre de una ciudad. Después de solicitar estos datos deberá mostrar por
+    //pantalla el siguiente mensaje: Te llamas y tienes <años> años. Bienvenido a
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Escribe tu nombre:");
+            string user = Console.ReadLine();
+
+            Console.WriteLine("Escribe tu edad:");
+
+            string edad = Console.ReadLine();
+
+            Console.WriteLine("Escribe el nombre de una ciudad: ");
+            string city = Console.ReadLine();
+
+            Console.WriteLine("Te llamas " + user + " tienes " + edad + ". Bienvenido a " + city);
+        }
+    }
+}
