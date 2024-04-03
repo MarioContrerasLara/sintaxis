@@ -1,27 +1,49 @@
 using System;
+using System.Drawing;
 
-namespace _6
+namespace _6._1
 {
-    //Solicitar un número al usuario y un carácter. Crear una pirámide con N filas y el carácter solicitado.
-    //Por ejemplo, si el usuario introduce 5 y * el resultado por consola debería ser:
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Introduce un número.");
-            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduce un número: ");
+            string input = Console.ReadLine();
+            int n;
+            while (!int.TryParse(input, out n))
+            {
+                Console.WriteLine("Introduce un número: ");
+                input = Console.ReadLine();
+            }
 
             Console.WriteLine("Introduce un caracter");
             string c = Console.ReadLine();
+            while (string.IsNullOrEmpty(c))
+            {
+                Console.WriteLine("Introduce un caracter: ");
+                c = Console.ReadLine();
+            }
+
 
             for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j <= i; j++)
+                if (i == 0 ^ i==n -1)
                 {
+                    for (int j = 0; j <= i; j++)
+                    {
+                        Console.Write(c);
+                    }
+                }
+                else
+                {
+                    Console.Write(c);
+                    for (int j = 1; j < i; j++)
+                    {
+                        Console.Write(" ");
+                    }
                     Console.Write(c);
                 }
                 Console.WriteLine();
             }
         }
     }
-}
